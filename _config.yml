@@ -55,7 +55,8 @@ external_services:
 
 navbar_fixed: true
 footer_fixed: true
-search_enabled: true
+# Search UI is disabled in _includes/header.liquid and _includes/scripts.liquid (wrapped in liquid comments). Re-enable those blocks, then set below to true.
+search_enabled: false
 socials_in_search: true
 posts_in_search: true
 bib_search: true

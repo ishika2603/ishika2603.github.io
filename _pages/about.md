@@ -27,7 +27,12 @@ latest_posts:
 ---
 
 Welcome — I’m **Ishika Tulsian**. This site is my academic home on the web.
-<!-- 
+
+🚧 This page is currently under construction. Please check back soon for updates! 🚧
+
+
+{% comment %}
 Add a short paragraph here about your research interests, current projects, or what you’re excited about. You can link to collaborators, labs, or courses. Replace the portrait by adding your photo as `prof_pic.jpg` in the `assets/img/` folder (or change `profile.image` in this file).
 
-Publications are driven by BibTeX: edit `_bibliography/papers.bib` and the site will build your [publications page](/publications/). Contact links and social icons come from `_data/socials.yml` and the `social` flag in this page’s front matter. -->
+Publications are driven by BibTeX: edit `_bibliography/papers.bib` and the site will build your [publications page](/publications/). Contact links and social icons come from `_data/socials.yml` and the `social` flag in this page’s front matter.
+{% endcomment %}
