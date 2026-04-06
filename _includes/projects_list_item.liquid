@@ -1,0 +1,130 @@
+{% assign proj_href = project.github %}
+{% if project.redirect %}
+  {% assign proj_href = project.redirect %}
+{% endif %}
+
+<article class="project-list-item">
+  {% if proj_href %}
+    <a
+      class="project-list-item__media"
+      href="{{ proj_href }}"
+      {% if proj_href contains "://" %}
+        target="_blank"
+        rel="noopener noreferrer"
+      {% endif %}
+      aria-label="{{ project.title | strip_html | xml_escape }} — open project link"
+    >
+      {% if project.img %}
+        <div class="project-list-item__img-frame">
+          {%
+            include figure.liquid
+            loading="eager"
+            path=project.img
+            sizes="(min-width: 992px) 320px, (min-width: 576px) 40vw, 100vw"
+            alt=""
+            class="project-list-item__img"
+          %}
+        </div>
+      {% else %}
+        <div class="project-list-item__placeholder" aria-hidden="true">
+          <span class="project-list-item__placeholder-letter">{{ project.title | slice: 0, 1 | upcase }}</span>
+        </div>
+      {% endif %}
+    </a>
+  {% else %}
+    <div class="project-list-item__media project-list-item__media--static" aria-hidden="true">
+      {% if project.img %}
+        <div class="project-list-item__img-frame">
+          {%
+            include figure.liquid
+            loading="eager"
+            path=project.img
+            sizes="(min-width: 992px) 320px, (min-width: 576px) 40vw, 100vw"
+            alt=""
+            class="project-list-item__img"
+          %}
+        </div>
+      {% else %}
+        <div class="project-list-item__placeholder">
+          <span class="project-list-item__placeholder-letter">{{ project.title | slice: 0, 1 | upcase }}</span>
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <div class="project-list-item__body">
+    <h2 class="project-list-item__title">
+      {% if proj_href %}
+        <a
+          href="{{ proj_href }}"
+          {% if proj_href contains "://" %}
+            target="_blank"
+            rel="noopener noreferrer"
+          {% endif %}
+        >
+          {{- project.title -}}
+        </a>
+      {% else %}
+        {{ project.title }}
+      {% endif %}
+    </h2>
+
+    {% if project.award %}
+      <p class="project-list-item__award">{{ project.award }}</p>
+    {% endif %}
+
+    {% if project.github or project.code or project.github_stars or project.writeup %}
+      <div class="project-list-item__links">
+        {% if project.github %}
+          <a
+            class="project-list-item__code"
+            href="{{ project.github }}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+            <span>Code</span>
+          </a>
+        {% elsif project.code %}
+          <a
+            class="project-list-item__code"
+            href="{{ project.code }}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-solid fa-code" aria-hidden="true"></i>
+            <span>Code</span>
+          </a>
+        {% elsif project.writeup %}
+          <a
+            class="project-list-item__code"
+            href="{{ project.writeup }}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+            <span>Write-up</span>
+          </a>
+        {% endif %}
+        {% if project.github_stars %}
+          <span class="project-list-item__stars" data-toggle="tooltip" title="GitHub stars">
+            <i class="fa-solid fa-star" aria-hidden="true"></i>
+            <span id="{{ project.github_stars }}-stars"></span>
+          </span>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if project.collaborators %}
+      <p class="project-list-item__collaborators">
+        <span class="project-list-item__label">Collaborators</span>
+        <span class="project-list-item__collaborators-text">{{ project.collaborators | join: ", " }}</span>
+      </p>
+    {% endif %}
+
+    {% if project.description %}
+      <p class="project-list-item__desc">{{ project.description | raw }}</p>
+    {% endif %}
+
+  </div>
+</article>

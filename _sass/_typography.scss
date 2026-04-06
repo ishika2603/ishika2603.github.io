@@ -4,6 +4,22 @@
 
 @use "variables" as v;
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--global-font-heading);
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: var(--global-font-mono);
+}
+
 p,
 h1,
 h2,

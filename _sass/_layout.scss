@@ -8,6 +8,9 @@ body {
   padding-bottom: 70px;
   color: var(--global-text-color);
   background-color: var(--global-bg-color);
+  font-family: var(--global-font-body);
+  font-size: 1.0625rem; /* ~17px from 16px root — slightly larger body text */
+  line-height: 1.65;
 
   h1,
   h2,
