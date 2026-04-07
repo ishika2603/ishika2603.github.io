@@ -4,10 +4,8 @@ permalink: /cv/
 title: CV
 nav: true
 nav_order: 5
-description: Under construction.
+description: Coming soon.
 ---
-
-This page is **under construction**. A downloadable CV and full details will be available here when ready.
 
 {% comment %}
 Restore the CV layout when your data is updated:

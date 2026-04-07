@@ -1,14 +1,17 @@
 ---
 layout: default
 ---
-<div class="post">
+<div class="post layout-about">
   <header class="post-header">
     <h1 class="post-title">
       {% if site.title == 'blank' %}
-        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-        {{ site.last_name }}
+        <span class="font-weight-bold">
+          {{ site.first_name }}
+          {% if site.middle_name %} {{ site.middle_name }}{% endif %}
+          {% if site.last_name %} {{ site.last_name }}{% endif %}
+        </span>
       {% else %}
-        {{ site.title }}
+        <span class="font-weight-bold">{{ site.title }}</span>
       {% endif %}
     </h1>
     <p class="desc">{{ page.subtitle }}</p>
@@ -34,6 +37,11 @@ layout: default
         {% endif %}
         {% if page.profile.more_info %}
           <div class="more-info">{{ page.profile.more_info }}</div>
+        {% endif %}
+        {% if page.social %}
+          <div class="social social-inline">
+            <div class="contact-icons">{% social_links %}</div>
+          </div>
         {% endif %}
       </div>
     {% endif %}
@@ -65,7 +73,7 @@ layout: default
     {% endif %}
 
     <!-- Social -->
-    {% if page.social %}
+    {% if page.social and page.profile == nil %}
       <div class="social">
         <div class="contact-icons">{% social_links %}</div>
 

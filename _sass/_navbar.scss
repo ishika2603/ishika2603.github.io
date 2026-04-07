@@ -58,6 +58,11 @@
   .navbar-brand {
     color: var(--global-text-color);
     font-family: var(--global-font-heading);
+    transition: font-weight 0.15s ease;
+
+    &.title:hover {
+      font-weight: 700;
+    }
   }
 
   .navbar-nav .nav-item .nav-link {

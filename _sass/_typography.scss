@@ -35,6 +35,11 @@ strong {
   color: var(--global-text-color);
 }
 
+strong,
+b {
+  font-weight: 700;
+}
+
 hr {
   border-top: 1px solid var(--global-divider-color);
 }

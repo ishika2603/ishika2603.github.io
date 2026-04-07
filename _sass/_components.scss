@@ -90,6 +90,24 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
+// About page: justified paragraphs (headings/lists stay default alignment)
+.layout-about article .clearfix {
+  p {
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+
+  /* Markdown collapses multiple blank lines; use margin for real vertical space */
+  > h3:first-of-type {
+    margin-top: 3rem;
+  }
+
+  h4 {
+    font-weight: 700;
+  }
+}
+
 // CV
 
 .cv {
@@ -212,6 +230,77 @@ ul.task-list input[type="checkbox"] {
 
   .contact-note {
     font-size: 0.8rem;
+  }
+}
+
+// Social icons under about profile image
+.profile .social-inline {
+  margin-top: 0.85rem;
+  text-align: center;
+
+  .contact-icons {
+    font-size: 1.7rem;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+
+    a {
+      margin-right: 0;
+    }
+
+    i::before {
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    a:hover {
+      text-decoration: none;
+
+      i::before {
+        opacity: 0.82;
+      }
+    }
+
+    i.fa-github::before {
+      color: #181717;
+    }
+    i.fa-linkedin::before {
+      color: #0a66c2;
+    }
+    i.fa-x-twitter::before {
+      color: #111111;
+    }
+    i.fa-twitter::before {
+      color: #1da1f2;
+    }
+    i.fa-instagram::before {
+      color: #e4405f;
+    }
+    i.fa-youtube::before {
+      color: #ff0000;
+    }
+    i.fa-google-scholar::before,
+    i.ai-google-scholar::before,
+    i.si-google-scholar::before {
+      color: #4285f4;
+    }
+    i.fa-orcid::before,
+    i.ai-orcid::before,
+    i.si-orcid::before {
+      color: #a6ce39;
+    }
+    i.fa-envelope::before {
+      color: #6b7280;
+    }
+  }
+}
+
+html[data-theme="dark"] .profile .social-inline .contact-icons {
+  i.fa-github::before,
+  i.fa-x-twitter::before {
+    color: #f5f5f5;
   }
 }
 
