@@ -7,8 +7,7 @@
 :root {
   color-scheme: light;
   --global-font-body: Georgia, "Times New Roman", Times, serif;
-  --global-font-heading: "JetBrains Mono", ui-monospace, "Cascadia Code", "Source Code Pro", Menlo,
-    Consolas, monospace;
+  --global-font-heading: "JetBrains Mono", ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
   --global-font-mono: var(--global-font-heading);
   --global-bg-color: #{v.$white-color};
   --global-code-bg-color: #{v.$code-bg-color-light};

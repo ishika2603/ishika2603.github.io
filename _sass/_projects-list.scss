@@ -64,7 +64,6 @@
     box-shadow 0.35s ease,
     transform 0.35s ease;
 
-     
   &:focus-visible {
     box-shadow: 0 0 0 3px var(--global-theme-color);
   }
@@ -86,7 +85,6 @@ a.project-list-item__media {
   overflow: hidden;
   border-radius: inherit;
   background-color: var(--global-divider-color);
-
 
   figure {
     margin: 0;

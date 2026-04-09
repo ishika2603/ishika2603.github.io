@@ -8,7 +8,7 @@
     <a
       class="project-list-item__media"
       href="{{ proj_href }}"
-      {% if proj_href contains "://" %}
+      {% if proj_href contains '://' %}
         target="_blank"
         rel="noopener noreferrer"
       {% endif %}
@@ -57,7 +57,7 @@
       {% if proj_href %}
         <a
           href="{{ proj_href }}"
-          {% if proj_href contains "://" %}
+          {% if proj_href contains '://' %}
             target="_blank"
             rel="noopener noreferrer"
           {% endif %}
@@ -118,13 +118,12 @@
     {% if project.collaborators %}
       <p class="project-list-item__collaborators">
         <span class="project-list-item__label">Collaborators</span>
-        <span class="project-list-item__collaborators-text">{{ project.collaborators | join: ", " }}</span>
+        <span class="project-list-item__collaborators-text">{{ project.collaborators | join: ', ' }}</span>
       </p>
     {% endif %}
 
     {% if project.description %}
       <p class="project-list-item__desc">{{ project.description | raw }}</p>
     {% endif %}
-
   </div>
 </article>
